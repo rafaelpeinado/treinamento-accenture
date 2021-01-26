@@ -2,11 +2,29 @@
   <article>
     <h3>Event Binding</h3>
     <div>
+      <!--<button on-click="botaoClicado()" class="btn btn-primary">Me clique!</button>-->
       <button (click)="botaoClicado()" class="btn btn-primary">Me clique!</button>
       <br><br>
 
-      <input type="text" (keyup)="onKeyUp($event)">
+      <input type="text" (keyup)="onKeyUp($event)"
+             (keyup.enter)="salvarValor($event.target.value)"
+             (blur)="salvarValor(campoInput.value)"
+             #campoInput>
+      <!--
+      keyup: para ir guardando conforme vai escrevendo
+      keyup.enter: é salvo quando pressiona enter
+      blur: salva quando perde o foco do campo
+      -->
       <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <br>
+      <span (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight]="isMouseOver">
+        Passou o mouse sobre mim
+      </span>
+
     </div>
   </article>
 

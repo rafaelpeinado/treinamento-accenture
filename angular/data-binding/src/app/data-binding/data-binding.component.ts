@@ -12,6 +12,8 @@ export class DataBindingComponent implements OnInit {
   urlImagem = 'http://lorempixel.com/400/200/sports/';
 
   valorAtual = '';
+  valorSalvo = '';
+  isMouseOver = false;
 
   getValor(): number {
     return 1;
@@ -27,6 +29,14 @@ export class DataBindingComponent implements OnInit {
 
   onKeyUp(evento: KeyboardEvent): any {
     this.valorAtual = (evento.target as HTMLInputElement).value;
+  }
+
+  salvarValor(valor: string): any {
+    this.valorSalvo = valor;
+  }
+
+  onMouseOverOut(): any {
+    this.isMouseOver = !this.isMouseOver;
   }
 
   constructor() { }
