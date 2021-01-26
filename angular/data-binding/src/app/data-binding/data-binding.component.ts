@@ -11,12 +11,22 @@ export class DataBindingComponent implements OnInit {
   cursoAngular = true;
   urlImagem = 'http://lorempixel.com/400/200/sports/';
 
+  valorAtual = '';
+
   getValor(): number {
     return 1;
   }
 
   getCurtirCurso(): boolean {
     return true;
+  }
+
+  botaoClicado(): any {
+    alert('Botão clicado!');
+  }
+
+  onKeyUp(evento: KeyboardEvent): any {
+    this.valorAtual = (evento.target as HTMLInputElement).value;
   }
 
   constructor() { }
