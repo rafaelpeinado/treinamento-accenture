@@ -3,7 +3,7 @@ import {Component, Input, OnInit} from '@angular/core';
 @Component({
   selector: 'app-input-property',
   templateUrl: './input-property.component.html',
-  styleUrls: ['./input-property.component.css'],
+  styleUrls: ['./input-property.component.css']
   //inputs: ['nomeCurso'] // outra forma de usar o @Input
   //inputs: ['nomeCurso:nome']
 })
